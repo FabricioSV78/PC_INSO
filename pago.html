@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Pago</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Import Google font 'Roboto' */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+        /* Custom styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .modal {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            width: 600px;
+            max-width: 100%;
+            margin: 2rem auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .modal-header {
+            font-size: 24px;
+            margin-bottom: 2rem;
+        }
+        .modal-body {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #D1D5DB; /* Gray-300 */
+            border-radius: 4px;
+        }
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .payment-methods button {
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .submit-button {
+            background-color: #3B82F6; /* Blue-600 */
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+            cursor: pointer;
+        }
+        .price-tag {
+            font-size: 32px;
+            color: #1F2937; /* Gray-800 */
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Modal -->
+    <div class="modal">
+        <div class="modal-header">
+            Seleccione Método de Pago
+        </div>
+        <div class="modal-body">
+            <div class="payment-methods">
+                <button>
+                    <img src="https://placehold.co/50x30" alt="VISA logo" />
+                </button>
+                <button>
+                    <img src="https://placehold.co/50x30" alt="BCP logo" />
+                </button>
+                <button>
+                    <img src="https://placehold.co/50x30" alt="Yape and Plin logo" />
+                </button>
+            </div>
+            <div>
+                <div class="input-group">
+                    <label for="cardholder-name">Nombre del Titular:</label>
+                    <input type="text" id="cardholder-name" placeholder="Nombre del Titular">
+                </div>
+                <div class="input-group">
+                    <label for="card-number">Número de Tarjeta:</label>
+                    <input type="text" id="card-number" placeholder="Número de Tarjeta">
+                </div>
+                <div class="input-group grid grid-cols-2 gap-1">
+                    <div>
+                        <label for="expiry-date">Fecha de Venc.:</label>
+                        <input type="text" id="expiry-date" placeholder="MM/AA">
+                    </div>
+                    <div>
+                        <label for="cvc">Cvc:</label>
+                        <input type="text" id="cvc" placeholder="CVC">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="price-tag">
+            S/ 15.00
+        </div>
+        <button class="submit-button">
+            Pagar
+        </button>
+    </div>
+</body>
+</html>

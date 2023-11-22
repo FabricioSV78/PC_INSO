@@ -1,0 +1,108 @@
+/* Estilos para el navbar */
+.navbar {
+    background-color: #000; /* Fondo negro */
+    display: flex;
+    
+    align-items: center;
+    padding: 0 30px; /* Espaciado interior del navbar */
+    color: #fff; /* Texto blanco */
+    position: fixed; /* Fijar el navbar en la parte superisor */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Asegúrese de que el navbar esté sobre otros elementos */
+    height: 80px; /* Altura fija para el navbar */
+}
+
+/* Estilos para el enlace "Prodent" a la izquierda */
+.navbar-left a {
+    text-decoration: none;
+    color: #fff; /* Texto blanco */
+    font-weight: bold;
+    font-size: 20px; /* Tamaño de fuente */
+}
+
+/* Estilos para el enlace "Iniciar sesión" a la derecha */
+.navbar-right a {
+    text-decoration: none;
+    color: #fff; /* Texto blanco */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-left: 20px; /* Espaciado entre enlaces si hay más de uno */
+}
+
+img{
+    width: 100px;
+    height: 50px;
+}
+
+/* Reset del margin y padding del body */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding-top: 60px; /* Espacio adicional en la parte superior para el navbar */
+}
+
+/* Estilos del contenedor del formulario */
+.form-container {
+  width: 100%;
+  max-width: 350px; /* Ajustar el ancho del contenedor para centrar los elementos */
+  background: #fff;
+  margin: 2em auto; /* Margen superior e inferior para centrar verticalmente */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los títulos dentro del contenedor */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los grupos de entrada del formulario */
+.form-group, .input-group {
+  width: 100%; /* Asegurarse de que los grupos de formulario ocupen todo el ancho */
+  margin-bottom: 15px;
+}
+
+/* Estilos para las etiquetas y campos de entrada */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+input[type="date"],
+input[type="submit"] {
+  width: calc(100% - 20px); /* Calcular el ancho para ajustar el padding */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Asegurarse de que el padding no afecte el ancho */
+}
+
+/* Estilos para el botón de envío */
+input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Mensaje de error estilizado */
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  display: block; /* Asegurarse de que se muestre en línea */
+  margin-top: -10px; /* Posicionar justo debajo del campo de entrada */
+  margin-bottom: 10px; /* Espacio antes del siguiente campo */
+}

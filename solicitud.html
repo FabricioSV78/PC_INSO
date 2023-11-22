@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generar Solicitud de Colegiado</title>
+<link rel="stylesheet" href="./css/estilos.css">
+<script>
+// Function to only allow numbers for DNI input
+function onlyNumbers(e) {
+  var charCode = (e.which) ? e.which : e.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    return false;
+  }
+  return true;
+}
+</script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-left">
+      <a href="lanning.html"><img src="img/cip.png" alt=""></a>
+  </div>
+  <div class="navbar-right">
+      <a href="solicitud.html">Generar solicitud</a>
+      
+  </div>
+  <div class="navbar-right">
+    <a href="verEstado.html">Ver estado de solicitud</a>
+   
+  </div>
+</nav>
+
+<div class="form-container">
+  <h2>Solicitud de Colegiatura</h2>
+  <form id="colegiaturaForm" action="/submit-application" method="post" enctype="multipart/form-data">
+    <!-- DNI -->
+    <div class="input-group">
+      <label for="dni">Dni:</label>
+      <input type="text" id="dni" placeholder="Ingrese su dni" name="dni" pattern="\d{8}" maxlength="8" onkeypress="return onlyNumbers(event)" required>
+      <span class="error-message" id="dni-error" style="display:none;">DNI debe tener 8 dígitos.</span>
+    </div>
+    <!-- Nombres -->
+    <div class="form-group">
+      <label for="nombres">Nombres:</label>
+      <input type="text" id="nombres" name="nombres" placeholder="Ingrese sus nombres" required>
+    </div>
+    <!-- Apellidos -->
+    <div class="form-group">
+      <label for="apellidos">Apellidos:</label>
+      <input type="text" id="apellidos" name="apellidos" placeholder="Ingrese sus apellidos" required>
+    </div>
+    <!-- Fecha de Nacimiento -->
+    <div class="form-group">
+      <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+      <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" required>
+    </div>
+    <!-- Correo Electrónico -->
+    <div class="form-group">
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
+    </div>
+    <!-- Título Profesional -->
+    <div class="form-group">
+      <label for="titulo">Título Profesional:</label>
+      <input type="file" id="titulo" name="titulo" required>
+    </div>
+    <!-- Botón de envío -->
+    <input type="submit" value="Enviar Solicitud">
+  </form>
+</div>
+
+<script>
+// Event listener for the form submission
+document.getElementById('colegiaturaForm').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+  alert('Solicitud enviada con éxito.'); 
+
+  window.location.href = 'lanning.html';
+});
+</script>
+
+</body>
+</html>
